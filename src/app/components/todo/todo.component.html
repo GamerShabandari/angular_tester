@@ -1,0 +1,13 @@
+<header>
+    <h1>Välkommen till Angular test</h1>
+</header>
+
+<div>
+    <p [class.done]="todo.isDone" (click)="toggle()">du måste {{todo.todoItem}}</p>
+</div>
+
+<img src="{{testImgUrl}}" alt="">
+
+<div (click)="getMovieImg()">
+    nu ska vi se den här filmen <img src="{{bild}}" alt="">
+</div>
