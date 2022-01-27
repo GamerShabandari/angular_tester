@@ -14,6 +14,13 @@ export class TodoComponent implements OnInit {
 
   bild:string = ""
 
+  searchedFilm: string = ""
+
+  matchedFilm: string = ""
+
+  matchedFilmImg: string = ""
+  
+
   constructor() { }
 
   ngOnInit(): void {
@@ -37,6 +44,23 @@ export class TodoComponent implements OnInit {
     })
 
     //return test
+
+  }
+
+  searchMovie(title:string){
+
+    fetch("http://www.omdbapi.com/?t="+this.searchedFilm+"&apikey=5ed1c386").then(response => response.json())
+    .then(film => {
+
+      this.matchedFilm = film.Title;
+
+      this.matchedFilmImg = film.Poster;
+
+      //this.bild = thisMovieImg
+
+      //return thisMovieImg
+
+    })
 
   }
 
